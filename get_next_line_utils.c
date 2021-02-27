@@ -6,23 +6,11 @@
 /*   By: ddiakova <ddiakova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 09:06:59 by ddiakova          #+#    #+#             */
-/*   Updated: 2021/02/26 17:26:57 by ddiakova         ###   ########.fr       */
+/*   Updated: 2021/02/27 10:46:05 by ddiakova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		find_n(char *s)
-{
-	int i;
-
-	i = 0;
-	while(s[i] != '\n')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(const char *s1)
 {
@@ -37,7 +25,7 @@ char	*ft_strdup(const char *s1)
 		return (NULL);
 	i = 0;
 	while (i < length)
-	{	
+	{
 		s2[i] = s1[i];
 		i++;
 	}
@@ -71,7 +59,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (s2new);
 }
 
-int	ft_strlen(const char *s)
+int		ft_strlen(const char *s)
 {
 	int		l;
 
@@ -85,10 +73,10 @@ int	ft_strlen(const char *s)
 	return (l);
 }
 
-int 	ft_strchr_g(char *s, int c)
+int		ft_strchr_g(char *s, int c)
 {
-	int 		i;
-	
+	int		i;
+
 	i = 0;
 	if (s == NULL)
 		return (0);
@@ -96,32 +84,33 @@ int 	ft_strchr_g(char *s, int c)
 	{
 		if (s[i] == c)
 			return (1);
-		i++;		
+		i++;
 	}
-	return 0;
+	return (0);
 }
 
-char    *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-    char    *str;
-    int        i;
-    int        j;
-    i = 0;
-    j = 0;
-    if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1)))
-        return (NULL);
-    while (s1[j] != '\0')
-    {
-        str[i] = s1[j];
-        i++;
-        j++;
-    }
-    j = 0;
-    while (s2[j] != '\0')
-    {
-        str[i++] = s2[j++];
-    }
-    str[i] = '\0';
+	char	*str;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1)))
+		return (NULL);
+	while (s1[j] != '\0')
+	{
+		str[i] = s1[j];
+		i++;
+		j++;
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		str[i++] = s2[j++];
+	}
+	str[i] = '\0';
 	free(s1);
-    return (str);
+	return (str);
 }
